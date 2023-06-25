@@ -1,0 +1,248 @@
+@import 'variables'
+@import 'mixins'
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+summary 
+    display: block
+
+summary::-webkit-details-marker
+    display: none
+
+body
+    font-family: 'Lato', sans-serif
+
+.header
+    background-color: $backBlock
+    padding-top: 20px
+    padding-bottom: 20px
+    display: flex
+    justify-content: space-between
+    &__left
+        display: flex
+        align-items: center
+        gap: 41px
+
+#burger
+    position: absolute
+    left: -999999px
+    visibility: hidden
+    &:checked ~ .nav
+        right: -232px
+
+.box-content
+    overflow: hidden
+
+.nav
+    background: #FFFFFF
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
+    width: 232px
+    padding: 32px
+    position: absolute
+    box-sizing: border-box
+    top: 81px
+    right: 0 
+    transition: right .3s
+
+.center
+    padding-left: calc(50% - $widthSite / 2 )
+    padding-right: calc(50% - $widthSite / 2 )
+a
+    text-decoration: none
+
+.filter-sort
+    height: 132px
+    position: relative
+    display: flex
+    gap: $gapGrid
+    padding-top: 39px
+
+
+.filter
+    // position: absolute
+    position: relative
+    width: 360px
+    padding-top: 13px
+    // top: 39px
+    z-index: 10
+    &__content
+        background: #FFFFFF
+        padding-top: 0
+        padding-right: 16px
+        padding-bottom: 16px
+        padding-left: 16px
+    &[open]
+        background: #FFFFFF
+        box-shadow: 6px 4px 35px rgba(0,0, 0, 0.21)
+    &[open] .filter__heading
+        color: $colorSelectSite
+    &[open] path
+        fill: $colorSelectSite
+    &__summary
+        display: flex
+        align-items: center
+        gap: 11px
+        padding-left: 16px
+        cursor: pointer
+    &__heading
+        font-size: 14px
+        font-weight: 600
+        line-height: 17px
+        color: $colorText
+    &__item
+        margin-top: 16px
+    &__link-box
+        display: flex
+        flex-direction: column
+        gap: 11px
+        padding: 24px 16px
+    &__link
+        font-style: normal
+        font-weight: 400
+        font-size: 14px
+        line-height: 17px
+        color: #6F6E6E
+        &:hover
+            color: $colorSelectSite
+        
+    &__head
+        padding: 8px 11px 11px 11px
+        font-style: normal
+        font-weight: 400
+        font-size: 14px
+        line-height: 17px
+        color: #6F6E6E
+        border-bottom: 1px solid #EBEBEB
+        border-left: 5px solid $colorSelectSite
+    &__item[open] .filter__head
+        color: $colorSelectSite
+
+.sort
+    padding-top: 12px
+    display: flex
+    gap: 18px
+    &__details
+        position: relative
+    &__summary
+        display: flex
+        align-items: center
+        gap: 10px
+    &__heading
+        font-style: normal
+        font-weight: 400
+        font-size: 14px
+        line-height: 17px
+        color: #6F6E6E
+    &__box
+        display: flex
+        flex-direction: column
+        gap: 8px
+        position: absolute
+        left: -9px
+        top: 22px
+        background: #fff
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
+        padding: 7px 30px 11px 9px
+    &__check
+        display: flex
+        gap: 9px
+        font-weight: 400
+        font-size: 14px
+        color: #6F6E6E
+    
+
+
+    
+.product-box
+    @include centerFlex()
+    gap: $gapGrid
+
+
+.top-head
+    background: #F8F3F4
+    padding-top: 60px
+    padding-bottom: 60px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    &__heading
+        font-size: 24px
+        font-weight: 400
+        line-height: 29px
+        color: $colorSelectSite
+
+.breadcrumbs
+    &__link
+        font-size: 17px
+        font-weight: 300
+        line-height: 17px
+        color: #636363
+        &_site
+            font-weight: 700
+            color: $colorSelectSite
+
+.product
+    width: 360px
+    display: flex
+    flex-direction: column
+    &__img
+        width: 100%
+    &__content
+        padding: 24px 16px
+        background-color: #F8F8F8
+        display: flex
+        flex-direction: column
+        gap: 16px
+    &__name
+        font-size: 13px
+        font-weight: 400
+        line-height: 16px
+        color: $colorText
+    &__text
+        font-size: 14px
+        color: #5D5D5D
+    &__price
+        font-size: 16px
+        line-height: 19px
+        font-style: normal
+        color: $colorSelectSite
+
+
+
+
+.footer
+    padding-top: 24px
+    padding-bottom: 24px
+    background: rgba(34, 34, 36, 1)
+    color: #fff
+    &__wrapper
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+    &__copyright
+        font-size: 16px
+        font-weight: 400
+    &__socials
+        display: flex
+        justify-content: space-between
+        &__faicebook, &__inst, &__pintrest, &__twitter
+            width: 31px
+            height: 31px
+            background: #fff
+            margin-right: 8px
+            // a
+            //     display: block
+            //     text-align: center
+            //     padding-top: 7px
+            svg
+                display: block
+                margin: 0 auto
+                margin-top: 7px
+
+.change-color:hover
+    path
+        fill: $colorSelectSite
+        // &__faicebook:hover, &__inst:hover, &__pintrest:hover, &__twitter:hover
+            // a
+                // color: #fff
