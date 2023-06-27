@@ -1,7 +1,116 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.show-catalog {
+  position: relative;
+}
+.show-catalog__main {
+  padding: 20px 0px 60px 0px;
+  background: #F7F7F7;
+  position: relative;
+}
+.show-catalog__img {
+  display: block;
+  margin: 0 auto;
+}
+.show-catalog__back-fon {
+  height: 700px;
+}
+.show-catalog__item {
+  border: 1px solid #EAEAEA;
+  width: 80%;
+  text-align: center;
+  padding: 64px 0px;
+  position: absolute;
+  background-color: #FFF;
+  top: 50%;
+  left: 10%;
+  z-index: 10;
+}
+.show-catalog__item .sort {
+  justify-content: center;
+}
+.show-catalog__item .hr {
+  width: 60%;
+  margin: 0 auto;
+  height: 2px;
+  background: #EAEAEA;
+  margin-bottom: 65px;
+}
+.show-catalog__item .hr_pink {
+  margin: 12px auto;
+  height: 4px;
+  width: 100px;
+  background: #F16D7F;
+}
+.show-catalog__title {
+  color: #F16D7F;
+  font-size: 14px;
+  font-weight: 300;
+}
+.show-catalog__name {
+  font-size: 14px;
+  font-weight: 300;
+}
+.show-catalog__descr {
+  padding-top: 48px;
+  padding-bottom: 32px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #5E5E5E;
+}
+.show-catalog__price {
+  color: #F16D7F;
+  margin-bottom: 60px;
+}
+.show-catalog__btn-basket {
+  padding: 10px 40px 16px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 210px;
+  margin: 0 auto;
+  border: 1px solid #F16D7F;
+  margin-top: 48px;
+}
+.show-catalog__arr {
+  position: absolute;
+  top: 40%;
+  cursor: pointer;
+}
+.show-catalog__arr_left {
+  left: 2%;
+}
+.show-catalog__arr_right {
+  right: 2%;
+  transform: rotate(180deg);
+}
+
+.red {
+  position: absolute;
+  background: red;
+  height: 500px;
+  width: 400px;
+  right: -400px;
+  z-index: 13;
+}
+
+#arr2:checked ~ .red {
+  right: 0px;
+}
+
+#arr1:checked ~ .red {
+  right: 0px;
+}
+
+#arr2 {
+  position: absolute;
+  left: -999999px;
+  visibility: hidden;
+}
+
+#arr1 {
+  position: absolute;
+  left: -999999px;
+  visibility: hidden;
 }
 
 summary {
@@ -14,6 +123,19 @@ summary::-webkit-details-marker {
 
 body {
   font-family: "Lato", sans-serif;
+}
+
+.center {
+  padding-left: calc(50% - 570px);
+  padding-right: calc(50% - 570px);
+}
+
+a {
+  text-decoration: none;
+}
+
+.link-catalog {
+  color: #FFF;
 }
 
 .header {
@@ -31,6 +153,9 @@ body {
 }
 .header__right img {
   margin-right: 14px;
+}
+.header__burger-img {
+  padding-top: 4px;
 }
 
 #burger {
@@ -54,9 +179,10 @@ body {
   padding: 32px;
   position: absolute;
   box-sizing: border-box;
-  top: 82px;
+  top: 78px;
   right: -232px;
   transition: right 0.3s;
+  z-index: 11;
 }
 .nav__title {
   margin-bottom: 14px;
@@ -78,15 +204,6 @@ body {
 .nav ul {
   list-style: none;
   margin-bottom: 10px;
-}
-
-.center {
-  padding-left: calc(50% - 570px);
-  padding-right: calc(50% - 570px);
-}
-
-a {
-  text-decoration: none;
 }
 
 .filter-sort {
@@ -237,6 +354,10 @@ a {
 .breadcrumbs__link_site {
   font-weight: 700;
   color: #F16D7F;
+}
+
+.product-box {
+  padding-bottom: 40px;
 }
 
 .product {

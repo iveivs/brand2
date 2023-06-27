@@ -1,9 +1,7 @@
 @import 'variables'
 @import 'mixins'
-*
-    margin: 0
-    padding: 0
-    box-sizing: border-box
+@import 'catalog'
+
 summary 
     display: block
 
@@ -13,6 +11,16 @@ summary::-webkit-details-marker
 body
     font-family: 'Lato', sans-serif
 
+.center
+    padding-left: calc(50% - $widthSite / 2 )
+    padding-right: calc(50% - $widthSite / 2 )
+
+a
+    text-decoration: none
+
+.link-catalog
+    color: #FFF
+    
 .header
     background-color: $backBlock
     padding-top: 20px
@@ -27,8 +35,8 @@ body
     &__right
         img
             margin-right: 14px
-    // &__basket-icon
-    //     margin-right: 0px
+    &__burger-img
+        padding-top: 4px
 
 #burger
     position: absolute
@@ -48,9 +56,10 @@ body
     padding: 32px
     position: absolute
     box-sizing: border-box
-    top: 82px
+    top: 78px
     right: -232px
     transition: right .3s
+    z-index: 11
     &__title
         margin-bottom: 14px
     &__link
@@ -67,13 +76,7 @@ body
     ul
         list-style: none
         margin-bottom: 10px
-        // border-bottom: 1px solid #EBEBEB
 
-.center
-    padding-left: calc(50% - $widthSite / 2 )
-    padding-right: calc(50% - $widthSite / 2 )
-a
-    text-decoration: none
 
 .filter-sort
     height: 132px
@@ -173,8 +176,6 @@ a
         font-size: 14px
         color: #6F6E6E
     
-
-
     
 .product-box
     @include centerFlex()
@@ -204,11 +205,13 @@ a
             font-weight: 700
             color: $colorSelectSite
 
+.product-box
+    padding-bottom: 40px
+
 .product
     width: 360px
     display: flex
     flex-direction: column
-    
     &__img
         height: 420px
         margin: 0 auto
